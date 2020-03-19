@@ -1,0 +1,349 @@
+<!doctype html>
+
+<html>
+	
+<head>
+	
+<!--The following displays language used in browser to interpret page -->
+<meta charset="UTF-8">
+
+<meta name="description" content="Behind the scenes of The Nightcap, SLO’s spot for funny sketches and jokes for adults." />
+<meta name="keywords" content="Funny pick up lines, funny, funny gifs, funny jokes, corny jokes, funniest joke in the world, funny christmas shirts, funny jokes for adults, funny animal videos, funny gifts, reddit funny, funny dad jokes, saturday night live tickets, gag gifts"/>
+
+
+<!--The following line of code displays the page title on a browser tab -->
+<title>BTS: The Nightcap- Home of the funniest jokes in the world.</title>
+
+<!--link tags are for linking to external files, in this case your CSS stylesheet-->
+<link href="style.css" rel="stylesheet" type="text/css">
+	
+<!--link tags are for linking to external files, in this case a special CSS stylesheet-->
+<link href="normalize.css" rel="stylesheet" type="text/css">
+
+<!--the following tag tells the browser to adjust the site according to screen size-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!--The following code links to the jquery library -->
+<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+
+<!--The following code links to the javascript file that runs the slideshow -->	
+<script type="text/javascript" src="js/jquery.cycle2.min.js"></script>
+    
+<!--The following code links to the javascript file that runs the parallax image -->    
+<script src="js/parallax.min.js"></script>
+	
+<!--The following code links to Google Fonts-->
+<link href="https://fonts.googleapis.com/css?family=Barlow:400,500,900|Lato:400,700&display=swap" rel="stylesheet">
+	
+<!--The following javscript runs the jquery slideshow -->
+<script type="text/javascript">
+$('#slider').cycle({});
+</script>
+
+<!--The following javascript runs the nav bar which disappears on scroll-->
+<script type="text/javascript">
+// Hide Header on on scroll down
+var didScroll;
+var lastScrollTop = 0;
+var delta = 5;
+var navbarHeight = $('header').outerHeight();
+
+$(window).scroll(function(event){
+    didScroll = true;
+});
+
+setInterval(function() {
+    if (didScroll) {
+        hasScrolled();
+        didScroll = false;
+    }
+}, 250);
+
+function hasScrolled() {
+    var st = $(this).scrollTop();
+    
+    // Make sure they scroll more than delta
+    if(Math.abs(lastScrollTop - st) <= delta)
+        return;
+    
+    // If they scrolled down and are past the navbar, add class .nav-up.
+    // This is necessary so you never see what is "behind" the navbar.
+    if (st > lastScrollTop && st > navbarHeight){
+        // Scroll Down
+        $('header').removeClass('nav-down').addClass('nav-up');
+    } else {
+        // Scroll Up
+        if(st + $(window).height() < $(document).height()) {
+            $('header').removeClass('nav-up').addClass('nav-down');
+        }
+    }
+    
+    lastScrollTop = st;
+}
+</script>
+    
+<!--Favicon - images are in a folder called 'fav'-->
+<link rel="apple-touch-icon" sizes="180x180" href="img/fav/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="img/fav/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="img/fav/favicon-16x16.png">
+<link rel="manifest" href="img/fav/site.webmanifest">
+<link rel="mask-icon" href="img/fav/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<!--End Favicon-->
+    
+<!--back to top button-->
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top!</button>
+<script>
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 30 || document.documentElement.scrollTop > 30) {
+    document.getElementById("myBtn").style.display = "block";
+  } else {
+    document.getElementById("myBtn").style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}    
+</script>   
+</head>
+
+<body>
+
+<!--beginning of navigation section-->
+<header>
+<div class="nav-container">
+<div class="brand"><a href=http://https://rianabutler.github.io/j410> <img src="img/logo.png" width="190" height="75" alt=""/></div>
+<nav>
+<div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
+  <ul class="nav-list">
+        <li>
+          <a href="#home">About The Nightcap</a>
+        </li>
+	   <li>
+          <a href="#gal">What Happens at Meetings</a>
+		  </li>
+	  	<li>
+          <a href="#tl">Lasting Impressions</a>
+        </li>
+        <li>
+          <a href="#vid">The Inside Scoop </a>
+			</li>
+      <li>
+          <a href="#num">Past, Present, and Future</a>
+			</li>
+      </ul>
+</nav>
+</div>
+<!--closing navigation tag-->
+</header>
+<!--end of navigation section-->
+    
+<!--main image-->
+<div class="video-container">
+	   <video autoplay loop muted>
+		     <source src="img/nightcapmainimage.mov" type="video/mp4">
+	   </video>
+     <div class="overlay-desc">
+        <h1>BTS: THE NIGHTCAP</h1>
+     </div>
+
+</div>
+<!--animated welcome-->
+<div class="wrapper">
+<!--animated welcome code here-->	
+</div>
+    
+<!--beginning of main content area-->
+<div class="row whiteBG">
+<h2 id="home">So, What Exactly is The Nightcap?</h2><br>
+    <button onclick="typeWriter()">Click me!</button>
+<p id="demo"></p>
+<script>
+var i = 0;
+var txt = 'The Nightcap is a college late night comedy show, produced and created by students at Cal Poly San Luis Obispo. It was created in 2015 by Jordan Miller, and focuses on sketch comedy. The team consists of writers, actors, and producers who meet twice a week to put on a quarterly show for anyone who wants a good laugh.';
+var speed = 40;
+
+function typeWriter() {
+  if (i < txt.length) {
+    document.getElementById("demo").innerHTML += txt.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  }
+}
+</script>
+<p class="tab"><a href="#gal">What Happens at Meetings</a></p>
+</div>
+
+<!--beginning of slideshow section-->
+<div class="row blueBG"><!--beginning of row-->
+<h2 id="gal">What Happens at Meetings, Stays at Meetings</h2>
+<article><!--beginning of article-->
+<p class="tab">Scroll through these photos to see what goes on at The Nightcap meetings.</p>
+<!--beginning of slideshow-->
+<div id="slider"
+data-cycle-caption="#alt-caption"
+data-cycle-caption-template="{{alt}}"
+data-cycle-fx="scrollHorz"
+data-cycle-pause-on-hover="true"
+data-cycle-speed="200">
+<div class="cycle-prev"></div>
+<div class="cycle-next"></div>
+<img src="img/1.jpg" width="100%" height="100%" alt="In the Construction Innovations building on February 3, 2020, Braden Wicker, fourth year Computer Science major, is asked to present his sketch ideas for the upcoming Nightcap show in March. Speaking ideas out loud is the first step in the team’s creative process."/>
+<img src="img/7.jpg" width="100%" height="100%" alt="Nightcap members are encouraged to bring their laptops to meetings to jot down ideas and notes regarding their sketches."/>
+<img src="img/2.jpg" width="100%" height="100%" alt="Alex Holmes, fourth year Theater Arts major, says joining The Nightcap is the greatest decision in her college experience she’s ever made. Joining her sophomore year, Holmes has written and acted in several sketches, her favorite being one in which she acted and sang as President Armstrong’s wife."/>
+<img src="img/3.jpg" width="100%" height="100%" alt="Wylie Hughs, fourth year English major, graduated Fall 2019 yet still goes to every meeting. “It’s great experience for knowing what I want to do later in life which is screenwriting. Plus all my best friends are there, so I want to hang out with them as much as I can before I move.” Hughs has been on The Nightcap for two and a half years."/>
+<img src="img/4.jpg" width="100%" height="100%" alt="At this particular meeting, the entire Nightcap team was split into multiple groups and put into different rooms. This was to ensure that they used their time wisely and productively, because everyone would have a chance to discuss their sketches and ask for feedback. Meetings usually run for two hours twice a week, leading up to the show. Even though it’s an extracurricular, attendance is key to having the funniest sketches and ultimately, a seamless show."/>
+<img src="img/5.jpg" width="100%" height="100%" alt="Humor is in the eye of the beholder, some may say. The Nightcap sketches are quirky takes on traditional late night comedy shows such as Saturday Night Live."/>
+<img src="img/6.jpg" width="100%" height="100%" alt="From left to right- Zandler Chavez, fourth year Theatre Arts major, D’Angelo Reyes, third year Civil Engineering major, and Easton Elting, second year Computer Science major, fool around before the biweekly meeting starts. Reyes was talking to Elting about something he saw on Reddit the night prior. Laughing and making jokes is what keeps The Nightcap going, as simple jokes often turn into sketches."/>
+</div><!--end of slideshow-->
+<!--beginning of slideshow caption-->
+<div id="alt-caption" class="center">
+</div><!--end of slideshow caption-->
+<p class="tab"><a href="#tl">Favorite Sketches</a></p>
+</article><!--end of article-->
+</div><!--end of row-->
+<!--end of slideshow section-->
+	
+<!--beginning of audio section-->
+<div class="row whiteBG">
+<h2 id="tl">Lasting Impressions</h2>
+<article>
+  <p class="tab">Click on images to hear these three students' favorite Nightcap sketches! From left to right: Journalism sophomore Blas Alvarado, statistics junior Mira Talwalkar, computer science senior Nick Bishop.<br>(Double-click to pause audio)</p>
+  <div class="table">
+	<div id="trip">
+<audio id="audio_blas">
+    <source src="audio/blas.mp3" type="audio/mpeg" />
+</audio>        
+<audio id="audio_mira">
+    <source src="audio/mira.mp3" type="audio/mpeg" />
+</audio>        
+<audio id="audio_nick">
+	<source src="audio/nick.mp3" type="audio/mpeg" />
+</audio>
+        
+<img src="img/rollover/blas.GIF" class="rollover" alt="description" onMouseOver="this.src='img/rollover/blas.gif'" onMouseOut="this.src='img/rollover/blas.gif'" onClick="document.getElementById('audio_blas').play(); return false;" onDblClick="document.getElementById('audio_blas').pause(); return false;">
+ /&gt; 
+            
+<img src="img/rollover/mira.GIF" class="rollover" alt="description" onMouseOver="this.src='img/rollover/mira.gif'" onMouseOut="this.src='img/rollover/mira.gif'" onClick="document.getElementById('audio_mira').play(); return false;" onDblClick="document.getElementById('audio_mira').pause(); return false;">
+ /&gt;
+            
+<img src="img/rollover/nick.GIF" class="rollover" alt="description" onMouseOver="this.src='img/rollover/nick.gif'" onMouseOut="this.src='img/rollover/nick.gif'" onClick="document.getElementById('audio_nick').play(); return false;" onDblClick="document.getElementById('audio_nick').pause(); return false;">
+/&gt;
+	</div>
+</div>
+<p class="tab"><a href="#vid">The Inside Scoop</a></p>		
+</article>
+</div>
+<!--end of audio section-->
+    
+<!--beginning of parallax image-->
+<div class="parallax" data-parallax="scroll" data-bleed="10" data-speed="0.2" iosFix="true" data-image-src="img/parallax.jpg">
+</div>
+<!--end of parallax image-->
+
+<!--beginning of video section-->
+<div class="row orangeBG">
+<h2 id="vid">"My Time on The Nightcap"</h2>
+<article>
+<p class="tab">Alex Holmes, senior theatre major, shares her experience with being on The Nightcap. Click play to hear how it shaped her college experience.</p>	
+<video width="100%" height="100%" poster="img/poster.png" controls>
+<source src="img/herexperience.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+<p class="tab"><a href="#num">What's Next?</a></p>
+</article>
+</div>
+<!--end of video section-->
+
+<!--beginning of infographic section-->
+<div class="row whiteBG">
+<h2 id="num">Past, Present, and Future of The Nightcap</h2>
+<article>
+<p class="tab"></p>
+<!--infographic embed code here-->
+    <div class="infogram-embed" data-id="5cff1885-8410-4cef-9060-ddc5d4bde785" data-type="interactive" data-title="nightcap"></div>
+   <script id="infogram_0_5cff1885-8410-4cef-9060-ddc5d4bde785" title="nightcap" src="https://e.infogram.com/js/dist/embed.js?j0Z" type="text/javascript"></script><div style="padding:8px 0;font-family:Arial!important;font-size:13px!important;line-height:15px!important;text-align:center;border-top:1px solid #dadada;margin:0 30px"><br></div>
+</article>
+</div>
+<!--end of infographic section-->
+	
+<!--beginning of footer-->
+<footer>BTS: THE NIGHTCAP | San Luis Obispo, CA | <a href="mailto: email@email.com?Subject=Inquiry" target="_top"><a href="mailto: rianasbutler@gmail.com?Subject=Nice Website" target="_top">Email Me!</a> | Copyright 2020 | Site by Riana Butler 
+</footer>
+<!--end of footer-->
+	
+</body>
+	
+<!--the following script controls the responsive navigation-->
+<script>
+	(function($) { // Begin jQuery
+  $(function() { // DOM ready
+    // If a link has a dropdown, add sub menu toggle.
+    $('nav ul li a:not(:only-child)').click(function(e) {
+      $(this).siblings('.nav-dropdown').toggle();
+      // Close one dropdown when selecting another
+      $('.nav-dropdown').not($(this).siblings()).hide();
+      e.stopPropagation();
+    });
+    // Clicking away from dropdown will remove the dropdown class
+    $('html').click(function() {
+      $('.nav-dropdown').hide();
+    });
+    // Toggle open and close nav styles on click
+    $('#nav-toggle').click(function() {
+      $('nav ul').slideToggle();
+    });
+    // Hamburger to X toggle
+    $('#nav-toggle').on('click', function() {
+      this.classList.toggle('active');
+    });
+  }); // end DOM ready
+})(jQuery); // end jQuery
+	</script>
+	<script>
+	var headertext = [];
+var headers = document.querySelectorAll("#miyazaki th"),
+tablerows = document.querySelectorAll("#miyazaki th"),
+tablebody = document.querySelector("#miyazaki tbody");
+for(var i = 0; i < headers.length; i++) {
+	var current = headers[i];
+	headertext.push( current.textContent.replace( /\r?\n|\r/,"") );
+}
+for (var i = 0, row; row = tablebody.rows[i]; i++) {
+	for (var j = 0, col; col = row.cells[j]; j++) {
+		col.setAttribute("data-th", headertext[j]);
+	}
+}
+</script>
+	
+	<!----Prevents audio tracks from playing simultaneously---->
+<script>
+document.addEventListener('play', function(e){
+    var audios = document.getElementsByTagName('audio');
+    for(var i = 0, len = audios.length; i < len;i++){
+        if(audios[i] != e.target){
+            audios[i].pause();
+        }
+    }
+}, true);
+    </script>
+<!----Prevents audio tracks from playing simultaneously---->
+<script>
+document.addEventListener('play', function(e){
+    var audios = document.getElementsByTagName('audio');
+    for(var i = 0, len = audios.length; i < len;i++){
+        if(audios[i] != e.target){
+            audios[i].pause();
+        }
+    }
+}, true);
+</script>
+
+
+</html>
