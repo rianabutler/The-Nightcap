@@ -1,0 +1,462 @@
+/* CSS Document */
+
+/*----------------PARALLAX IMAGE-----------------*/
+.parallax {
+	min-height: 445px;
+	background: transparent;
+	padding-top: 35px;
+}
+
+body {
+	margin: 0;
+    padding: 0;
+}
+
+/*----------------navigation section-----------------*/
+header {
+    overflow: hidden;
+    padding: 1px 1px;
+	height: 105px; /*(height of nav bar)*/
+	position: static; /*(keeps nav bar visible when scrolling)*/
+    transition: .4s;
+	width: 100%;
+	top: 0;
+	z-index: 5; /*(ensures nav bar appears in front of other elements)*/
+	font-size: 1em;
+    background-color: white;
+    opacity: 1;
+}
+
+/*----------------navigation container-----------------*/
+.nav-container {
+  margin: 0 auto;
+}
+
+/*----------------text-based logo-----------------*/
+.brand {
+    padding: 15px 0 0px 10px;
+    float: left;
+    transition: .4s;
+}
+
+/*----------------mobile navigation--------------------*/
+.nav-mobile {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #ffffff;
+  height: 70px;
+  width: 70px;
+} 
+/*----------------navigation buttons-----------------*/
+nav {
+  float: center;
+}
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+nav ul li {
+  float: left;
+  position: relative;
+}
+nav ul li a,
+nav ul li a:visited {
+    display: block;
+    padding: 0 10px;
+    line-height: 105px;
+    background-color: white;
+    color: #D9430D;
+    text-decoration: none;
+	font-weight: bold;
+    font-family: 'Lato', sans-serif;
+
+}
+nav ul li a:hover,
+nav ul li a:visited:hover {
+    background-color: lightyellow;
+    color: #002f6d;
+}
+nav ul li a:not(:only-child):after,
+nav ul li a:visited:not(:only-child):after {
+  padding-left: 4px;
+}
+nav ul li ul li {
+  min-width: 190px;
+}
+nav ul li ul li a {
+  padding: 15px;
+  line-height: 20px;
+}
+.nav-dropdown {
+  position: absolute;
+  display: none;
+  z-index: 5;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+}	
+
+a.text:link, a.text:visited {
+    background-color: purple;
+    color: white;
+    padding: 4px 4px;
+    text-align: center;
+    text-decoration: none;
+}
+a.text:hover, a.text:active {
+    background-color: red;
+    color: black;
+}
+.row a{
+	color: white;
+    font-family: 'Lato', sans-serif;
+    text-transform: none;
+    padding: .5rem 3rem;
+    padding-right: 4rem;
+    border-radius: 100px;
+    margin:40px auto;
+    text-align: center;
+    position: relative;
+    display: block;
+    width: 140px;
+    letter-spacing: .3px;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: initial;
+    background: url(img/arrowright.png) #022340;
+    background-size: 100px;
+    background-repeat: no-repeat;
+    background-position: 96%;
+	text-decoration: none;
+}
+.row a:hover{
+	    background-color: #A4C1D9;
+    font: 'lato', serif;
+    color: white;
+	    text-decoration: none;
+    transition: all 0.3s ease-in 0s;
+}
+/*----------------media queries-----------------*/
+
+/*If device width is less than or equal to 800px, then do ...*/
+@media only screen and (max-width: 800px) {
+
+    h2 {
+        font-size: 35px !important;
+    }
+  .nav-mobile {
+    display: block;
+      background-color: white;
+      opacity: 0.75;
+  }
+  nav {
+    width: 100%;
+    padding: 70px 0 15px;
+  }
+  nav ul {
+    display: none;
+  }
+  nav ul li {
+    float: none;
+  }
+  nav ul li a {
+    padding: 15px;
+    line-height: 20px;
+    background-color: white;
+    opacity: 0.75;
+  }
+  nav ul li ul li a {
+    padding-left: 30px;
+  }
+
+  .nav-dropdown {
+    position: static;
+  } 
+    
+  .brand {
+	position: absolute;
+	padding-left: 80px;
+	float: left;
+	color: #000000;
+	font-family: 'Barlow', serif;
+    font-weight: 900;
+	font-size: small;
+  }
+	
+	.image2 {
+	cursor:pointer;
+	width: 90%;
+	height: 90%;
+}
+	
+}
+@media screen and (min-width: 800px) {  
+    
+/*-----styles for jquery dropdown menu-----*/
+  .nav-list {
+    display: block !important;
+  }
+}
+
+#nav-toggle {
+  position: absolute;
+  left: 18px;
+  top: 22px;
+  cursor: pointer;
+  padding: 10px 35px 16px 0px;
+}
+#nav-toggle span,
+#nav-toggle span:before,
+#nav-toggle span:after {
+  cursor: pointer;
+  border-radius: 1px;
+  height: 5px;
+  width: 35px;
+  background: #000000;
+  position: absolute;
+  display: block;
+  content: '';
+  transition: all 300ms ease-in-out;
+}
+#nav-toggle span:before {
+  top: -10px;
+}
+#nav-toggle span:after {
+  bottom: -10px;
+}
+#nav-toggle.active span {
+  background-color: transparent;
+}
+#nav-toggle.active span:before, #nav-toggle.active span:after {
+  top: 0;
+}
+#nav-toggle.active span:before {
+  transform: rotate(45deg);
+}
+#nav-toggle.active span:after {
+  transform: rotate(-45deg);
+}
+
+/*----------------Main Image-----------------*/
+
+body {
+}
+.video-container {
+  position: relative;
+}
+video {
+  height: auto;
+  vertical-align: middle;
+  width: 100%;
+}
+.overlay-desc {
+  background: rgba(0,0,0,0);
+    font-size: 3vw;
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+h1 {
+  color: #D9430D;
+  font-family: 'Barlow', serif;
+    font-weight: 900;
+  font-size: 10vw;
+  text-align: center;
+  
+}
+
+
+/*----------------Main Content Area(this is where all the content below the navigation bar will go)--*/
+.row {
+	margin-right: auto;
+	margin-left: auto;
+	margin-bottom: 0; /*(centers content within the row)*/
+	position: relative;
+	padding: 50px 50px;
+    text-align: center;
+    font-weight: 700;
+    color: #0D0D0D
+}
+
+article {
+	max-width: 1100px;
+	margin-left: auto;
+	margin-right: auto;
+	line-height: 15px;
+}
+
+h1 {
+	line-height: 1.5px;
+	text-transform: uppercase;
+	font-size: 20px;
+    color: #D9430D                                          ;
+}
+
+h2 {
+	font-family: 'Barlow', serif;
+    text-align: center;
+    font-size: 55px;
+    text-transform: none;
+    text-shadow: 0 0 7px #D9430D;
+    font-weight: 900;
+    color: #022340;
+    background: -webkit-linear-gradient(left,#ff005e,#ff01c9,#a700ff);
+    -webkit-background-clip: text;
+    margin: 0;
+    line-height: initial;
+}
+
+p {
+	line-height: 1.5;
+}
+
+/*----------------SLIDESHOW-----------------*/
+
+#slider {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  z-index: 1;
+  position: relative;        
+}
+
+/* prev / next links */
+.cycle-prev, .cycle-next { 
+  position: absolute;
+  top: 0;
+  width: 30%;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  z-index: 800;
+  height: 100%;
+  cursor: pointer; 
+  }
+  
+.cycle-prev { 
+  left: 0;
+  background: url(img/arrowleft.png) 50% 50% no-repeat;
+  }
+  
+.cycle-next { 
+right: 0;
+background: url(img/arrowright.png) 50% 50% no-repeat;
+}
+
+.cycle-prev:hover, .cycle-next:hover { 
+opacity: 1;
+filter: alpha(opacity=70)
+}
+
+
+/* captions below slideshow*/
+#alt-caption {
+    background-color: whitesmoke;
+    color: #021526;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 1em;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    line-height: 1.07em
+}
+
+/*----------------VIDEO-----------------*/
+video {
+    position: relative;
+    width: 100%;    
+}
+
+/*----------------FOOTER-----------------*/
+
+footer {
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 25px;
+	padding-right: 25px;
+	text-align: center;
+	font-size: 10px;
+    background-color: whitesmoke;
+}
+/*(footer links)*/
+footer a {
+	text-decoration: none; /*(nullifies underline)*/
+	color: #000000;
+	font-family: 'Lato', sans-serif;
+}
+/*(link color when moused over)*/
+footer a:hover {
+	color: red;
+}
+
+/*----------------AUDIO BOARD-----------------*/
+
+.table {
+	position: relative;
+	text-align: center;
+	color: indianred;
+	font-size: 1px;
+    
+}
+
+.trip {text-align:center;}
+
+.trip img{
+  display:inline-block;
+  width:30%;
+  margin:0 1% 0 1%;
+  }
+
+.rollover {
+	cursor: pointer;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/*--------------background colors----------*/
+.whiteBG {
+	background-color: #ffeeab;
+}
+
+.blueBG {
+	background-color:#6F97CB;
+}
+
+.orangeBG {
+	background-color: #6F97CB;
+}
+
+/*----------------back to top button-----------------*/
+#myBtn {
+  
+  position: fixed; /* Fixed/sticky position */
+  bottom: 40px; /* Place the button at the bottom of the page */
+  right: 30px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color: #D9430D; /* Set a background color */
+  color: white; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 20px; /* Some padding */
+  border-radius: 12px; /* Rounded corners */
+  font-family: 'Lato', sans-serif;
+  font-size: 15px; /* Increase font size */
+}
+
+#myBtn:hover {
+  background-color: red;
+  opacity: .70;
+}
+
+/*----menu dissapear when scroll---*/
+.nav-up {
+  top: -105px; 
+}
